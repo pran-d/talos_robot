@@ -17,6 +17,12 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro"
        name="talos" >
 
+  <ros2_control name="dummy_hardware" type="system">
+    <hardware>
+      <plugin>dummy_hardware_gz/DummyHardwareInterfaceGz</plugin>
+    </hardware>
+  </ros2_control>
+
   <xacro:macro name="talos_ros2_control" params="use_sim:=^|false">
 
     <xacro:include filename="$(find talos_description)/urdf/arm/arm.ros2_control.xacro" />
